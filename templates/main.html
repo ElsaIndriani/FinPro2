@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Weather Prediction</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}" />
+
+
+</head>
+
+<body class="herocoba">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="predict-form">
+						<div class="form-header">
+							<h1>Prakiraan Cuaca</h1>
+						</div>
+						<form action="{{url_for('predict')}}" method="post">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Cahaya Matahari</span>
+										<input class="form-control" name="Sunshine" type="text" placeholder="Masukkan jumlah jam cuaca cerah hari ini">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Kecepatan Angin</span>
+										<input class="form-control" name="WindGustSpeed" type="text" placeholder="Masukkan kecepatan Angin dalam km/jam">
+									</div>
+								</div>
+							</div>
+                            <div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Kelembaban 9 Pagi</span>
+										<input class="form-control" name="Humidity9am" type="text" placeholder="Masukkan nilai kelembaban dalam persen">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Kelembaban 3 Sore</span>
+										<input class="form-control" name="Humidity3pm" type="text" placeholder="Masukkan nilai kelembaban dalam persen">
+									</div>
+								</div>
+							</div>
+                            <div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Tekanan 9 Pagi</span>
+										<input class="form-control" name="Pressure9am" type="text" placeholder="Masukkan nilai tekanan dalam HPA">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Tekanan 3 Sore</span>
+										<input class="form-control" name="Pressure3pm" type="text" placeholder="Masukkan nilai tekanan dalam HPA">
+									</div>
+								</div>
+							</div>
+                            <div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Awan 9 Pagi</span>
+										<input class="form-control" name="Cloud9am" type="text" placeholder="Masukkan presentase awan 1-8">
+									</div>
+								</div>
+                                <div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Awan 3 Sore</span>
+										<input class="form-control" name="Cloud3pm" type="text" placeholder="Masukkan presentase awan 1-8">
+									</div>
+								</div>
+                            </div>
+                            <div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Suhu 3 Sore</span>
+										<input class="form-control" name="Temp3pm" type="text" placeholder="Masukkan nilai suhu dalam celcius">
+									</div>
+								</div>
+                                <div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Hujan Hari Ini</span>
+										<input class="form-control" name="RainToday" type="text" placeholder="Masukkan 0 jika tidak hujan 1 hujan">
+									</div>
+								</div>
+                            </div>
+							<div class="form-btn">
+								<button class="submit-btn">Prediksi</button>
+							</div>
+                            <div class="form-btn">
+								<p class="message">{{prediction_text}}</p>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
